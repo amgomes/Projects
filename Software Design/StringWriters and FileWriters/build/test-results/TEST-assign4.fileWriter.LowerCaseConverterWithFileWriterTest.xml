@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="assign4.fileWriter.LowerCaseConverterWithFileWriterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-04-18T04:58:45" hostname="AspireS7" time="0.055">
+  <properties/>
+  <testcase name="testCombineWriterWriteWithLowerCaseConverter" classname="assign4.fileWriter.LowerCaseConverterWithFileWriterTest" time="0.024"/>
+  <testcase name="testResultBeforeAndAfterLowerCaseWhenOperatorIsSet" classname="assign4.fileWriter.LowerCaseConverterWithFileWriterTest" time="0.017"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

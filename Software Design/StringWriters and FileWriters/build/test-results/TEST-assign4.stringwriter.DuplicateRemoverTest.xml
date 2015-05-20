@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="assign4.stringwriter.DuplicateRemoverTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-04-18T04:58:45" hostname="AspireS7" time="0.004">
+  <properties/>
+  <testcase name="testDuplicateRemoverForBlankString" classname="assign4.stringwriter.DuplicateRemoverTest" time="0.001"/>
+  <testcase name="testRemoveDuplicateWhenThereIsOneDuplicate" classname="assign4.stringwriter.DuplicateRemoverTest" time="0.001"/>
+  <testcase name="testDuplicateRemoverForMoreThanOneSpaceBetweenWords" classname="assign4.stringwriter.DuplicateRemoverTest" time="0.0"/>
+  <testcase name="testDoNotRemoveDuplicateForDifferenceInCase" classname="assign4.stringwriter.DuplicateRemoverTest" time="0.0"/>
+  <testcase name="testAddedForCoverage" classname="assign4.stringwriter.DuplicateRemoverTest" time="0.0"/>
+  <testcase name="testDuplicateRemoverStringWithMultipleSpaces" classname="assign4.stringwriter.DuplicateRemoverTest" time="0.0"/>
+  <testcase name="testRemoveDuplicateWhenThereAreMultipleDuplicate" classname="assign4.stringwriter.DuplicateRemoverTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

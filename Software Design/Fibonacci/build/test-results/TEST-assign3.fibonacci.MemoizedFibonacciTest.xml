@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="assign3.fibonacci.MemoizedFibonacciTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-04-01T01:54:15" hostname="AspireS7" time="0.783">
+  <properties/>
+  <testcase name="testMemoizedIsOrderOfMagnitudeFasterThanRecursiveFibonacci" classname="assign3.fibonacci.MemoizedFibonacciTest" time="0.78"/>
+  <testcase name="testIfPositionIsLessThanZeroReturnNegativeOne" classname="assign3.fibonacci.MemoizedFibonacciTest" time="0.0"/>
+  <testcase name="testValidPositionReturnsCorrectFibonacciNumber" classname="assign3.fibonacci.MemoizedFibonacciTest" time="0.0"/>
+  <testcase name="testIfPositionIsZeroReturnFibonacciOne" classname="assign3.fibonacci.MemoizedFibonacciTest" time="0.0"/>
+  <testcase name="testIfPositionIsOneReturnFibonacciOne" classname="assign3.fibonacci.MemoizedFibonacciTest" time="0.0"/>
+  <testcase name="testIfPositionTwoReturnsCorrectFibonacciNumber" classname="assign3.fibonacci.MemoizedFibonacciTest" time="0.001"/>
+  <testcase name="testCanary" classname="assign3.fibonacci.MemoizedFibonacciTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="assign4.stringwriter.UpperCaseConverterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2015-04-18T04:58:45" hostname="AspireS7" time="0.003">
+  <properties/>
+  <testcase name="testConvertSomeLowerCaseStringToUpperCase" classname="assign4.stringwriter.UpperCaseConverterTest" time="0.0"/>
+  <testcase name="testConvertEmptyStringToLowerCase" classname="assign4.stringwriter.UpperCaseConverterTest" time="0.0"/>
+  <testcase name="testConvertAllUpperCaseStringToUpperCase" classname="assign4.stringwriter.UpperCaseConverterTest" time="0.0"/>
+  <testcase name="testConvertAllLowerCaseStringToUpperCase" classname="assign4.stringwriter.UpperCaseConverterTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
