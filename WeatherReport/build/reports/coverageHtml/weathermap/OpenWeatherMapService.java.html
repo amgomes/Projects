@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>OpenWeatherMapService.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">WeatherReport</a> &gt; <a href="index.source.html" class="el_package">weathermap</a> &gt; <span class="el_source">OpenWeatherMapService.java</span></div><h1>OpenWeatherMapService.java</h1><pre class="source lang-java linenums">package weathermap;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.SocketTimeoutException;
+
+<span class="fc" id="L15">public class OpenWeatherMapService implements WeatherService{</span>
+
+    JSONObject getJSON(String city) throws IOException, JSONException {
+        try{
+<span class="fc" id="L19">            URLConnection connection = connectToURL(city);</span>
+<span class="fc" id="L20">            BufferedReader readBuffer = new BufferedReader(new InputStreamReader(connection.getInputStream()));</span>
+<span class="fc" id="L21">            JSONObject cityDetails = new JSONObject(readBufferedReader(readBuffer));</span>
+<span class="fc" id="L22">            return cityDetails;</span>
+<span class="fc" id="L23">        }catch(SocketTimeoutException e){</span>
+<span class="fc" id="L24">            return new JSONObject(&quot;{ }&quot;);</span>
+        }
+    }
+
+    URLConnection connectToURL (String city) throws IOException {
+<span class="fc" id="L29">        return new URL(formUrl(city)).openConnection();</span>
+    }
+
+    String formUrl(String nameOfCity) throws MalformedURLException {
+        URL urlWeather;
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (nameOfCity.matches(&quot;[a-zA-Z, ]*&quot;)) {</span>
+<span class="fc" id="L35">            urlWeather = new URL(&quot;http://api.openweathermap.org/data/2.5/weather?q=&quot;</span>
+<span class="fc" id="L36">                    + nameOfCity.replaceAll(&quot;\\s&quot;, &quot;&quot;) + &quot;&amp;units=imperial&quot;);</span>
+<span class="fc" id="L37">            return (urlWeather.toString());</span>
+        } else
+<span class="fc" id="L39">            return &quot;Bad City Name&quot;;</span>
+    }
+
+    String readBufferedReader(BufferedReader readBuffer) throws IOException {
+<span class="fc" id="L43">        StringBuilder jsonText = new StringBuilder();</span>
+        String line;
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        while ((line = readBuffer.readLine()) != null) {</span>
+<span class="fc" id="L46">            jsonText.append(line);</span>
+        }
+<span class="fc" id="L48">        return jsonText.toString();</span>
+    }
+
+    WeatherData parseJSONToGetWeatherDetails(JSONObject jsonObj) throws JSONException {
+<span class="fc" id="L52">        JSONArray weatherArr = jsonObj.getJSONArray(&quot;weather&quot;);</span>
+
+<span class="fc" id="L54">        String condition = weatherArr.getJSONObject(0).getString(&quot;main&quot;);</span>
+<span class="fc" id="L55">        String city = jsonObj.getString(&quot;name&quot;);</span>
+<span class="fc" id="L56">        double temperature = jsonObj.getJSONObject(&quot;main&quot;).getDouble(&quot;temp&quot;);</span>
+
+<span class="fc" id="L58">        return new WeatherData(city, temperature, condition);</span>
+    }
+
+    @Override
+    public WeatherData getWeatherForCity(String city) throws IOException, JSONException {
+<span class="fc" id="L63">        JSONObject cityJson = getJSON(city);</span>
+<span class="fc" id="L64">        return parseJSONToGetWeatherDetails(cityJson);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
