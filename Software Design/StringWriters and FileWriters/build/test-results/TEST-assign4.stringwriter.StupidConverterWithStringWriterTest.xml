@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="assign4.stringwriter.StupidConverterWithStringWriterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-04-18T04:58:45" hostname="AspireS7" time="0.001">
-  <properties/>
-  <testcase name="testResultBeforeAndAfterStupidConverterWhenOperatorIsSet" classname="assign4.stringwriter.StupidConverterWithStringWriterTest" time="0.001"/>
-  <testcase name="testCombineWriterWriteWithStupidConverter" classname="assign4.stringwriter.StupidConverterWithStringWriterTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

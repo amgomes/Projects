@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="weathermap.OpenWeatherMapServiceTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2015-07-01T04:51:49" hostname="AspireS7" time="0.839">
+  <properties/>
+  <testcase name="testReadBufferedReaderDoesNotParseAInputStreamWithEmptyString" classname="weathermap.OpenWeatherMapServiceTest" time="0.005"/>
+  <testcase name="testParseJSONObjReturnsDataForValidCity" classname="weathermap.OpenWeatherMapServiceTest" time="0.202"/>
+  <testcase name="testConnectToURLThrowsExceptionIfTheNetworkFails" classname="weathermap.OpenWeatherMapServiceTest" time="0.337"/>
+  <testcase name="testGetJSONWithBlankCity" classname="weathermap.OpenWeatherMapServiceTest" time="0.073"/>
+  <testcase name="testReadBufferedReaderParsesTheInputStream" classname="weathermap.OpenWeatherMapServiceTest" time="0.0"/>
+  <testcase name="testGetJSONReturnsValidJSON" classname="weathermap.OpenWeatherMapServiceTest" time="0.074"/>
+  <testcase name="testGetJSONThrowsMalformedURLException" classname="weathermap.OpenWeatherMapServiceTest" time="0.0"/>
+  <testcase name="testParseJSONToGetWeatherDetailsReturnsValidWeatherData" classname="weathermap.OpenWeatherMapServiceTest" time="0.0"/>
+  <testcase name="testParseJSONObjReturnsExceptionForInvalidCity" classname="weathermap.OpenWeatherMapServiceTest" time="0.073"/>
+  <testcase name="testParseJSONToGetWeatherDetailsThrowsExceptionForMissingData" classname="weathermap.OpenWeatherMapServiceTest" time="0.0"/>
+  <testcase name="testGetJSONWithInvalidCity" classname="weathermap.OpenWeatherMapServiceTest" time="0.072"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
