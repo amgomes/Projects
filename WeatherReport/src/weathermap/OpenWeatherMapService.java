@@ -33,7 +33,7 @@ public class OpenWeatherMapService implements WeatherService{
         URL urlWeather;
         if (nameOfCity.matches("[a-zA-Z, ]*")) {
             urlWeather = new URL("http://api.openweathermap.org/data/2.5/weather?q="
-                    + nameOfCity.replaceAll("\\s", "") + "&units=imperial");
+                    + nameOfCity.replaceAll("\\s", "%20") + "&units=imperial");
             return (urlWeather.toString());
         } else
             return "Bad City Name";

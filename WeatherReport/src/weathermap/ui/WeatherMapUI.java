@@ -4,10 +4,10 @@ import weathermap.OpenWeatherMapService;
 import weathermap.WeatherMap;
 import weathermap.WeatherReport;
 
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -18,21 +18,19 @@ public class WeatherMapUI {
         WeatherMap weatherMap = new WeatherMap();
         weatherMap.setServiceProvider(new OpenWeatherMapService());
 
-        List<String> cities = getCitiesFromFile();
-        WeatherReport weatherReport = weatherMap.getWeatherReportForCities(cities);
-        printWeatherReport(weatherReport);
-    }
-
-    static List<String> getCitiesFromFile() {
         try {
-            Stream<String> cities = Files.lines(Paths.get("src", "cities.txt"), Charset.defaultCharset());
-            return cities.collect(toList());
+            List<String> cities = getCitiesFromFile();
+            WeatherReport weatherReport = weatherMap.getWeatherReportForCities(cities);
+            printWeatherReport(weatherReport);
         }
         catch (Exception e) {
-            System.out.println("Exception thrown reading from file.");
-            System.out.println(e.toString());
+            System.out.println("There was an error processing request: " + e.getMessage());
         }
-        return Arrays.asList();
+    }
+
+    static List<String> getCitiesFromFile() throws IOException {
+        Stream<String> cities = Files.lines(Paths.get("src", "cities.txt"), Charset.defaultCharset());
+        return cities.collect(toList());
     }
 
     static void printWeatherReport(WeatherReport weatherReport) {
